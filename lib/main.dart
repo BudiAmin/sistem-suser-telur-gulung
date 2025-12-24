@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-
+import 'screens/main_navigation.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/waiting_approval_screen.dart';
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
         '/waiting-approval': (context) => WaitingApprovalScreen(),
-        '/products': (context) => ProductListScreen(),
+        '/products': (context) => MainNavigation(),
         '/orders': (context) => OrderListScreen(),
       },
       onGenerateRoute: (settings) {

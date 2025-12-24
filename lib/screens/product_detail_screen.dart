@@ -15,7 +15,7 @@ class ProductDetailScreen extends StatefulWidget {
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
   final ProductService _productService = ProductService();
-  
+
   ProductModel? _product;
   bool _loading = true;
   bool _ordering = false;
@@ -43,7 +43,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     try {
       final products = await _productService.getProducts();
       final product = products.firstWhere((p) => p.id == widget.productId);
-      
+
       setState(() {
         _product = product;
         _loading = false;
@@ -66,7 +66,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       if (token != null) {
         // PERBAIKAN: Menggunakan named argument token: token
         final orderService = OrderService(token: token);
-        
+
         // PERBAIKAN: Memanggil method createOrder (sesuai yang ada di order_services.dart)
         final success = await orderService.createOrder(
           productId: widget.productId,
@@ -106,9 +106,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     setState(() => _ordering = false);
   }
 
-  int _calculateTotal() { // Ubah dari double ke int
-  if (_product == null) return 0;
-  return _product!.harga * _quantity;
+  int _calculateTotal() {
+    if (_product == null) return 0;
+    return _product!.harga * _quantity;
   }
 
   @override
@@ -161,23 +161,26 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             child: Stack(
                               children: [
                                 Center(
-                                 child: (_product?.foto_url != null && _product!.foto_url.isNotEmpty)
-                              ? Image.network(
-                                  _product!.foto_url, 
-                                  fit: BoxFit.cover, 
-                                  width: double.infinity,
-                                  // Tambahkan loading builder agar lebih rapi
-                                  errorBuilder: (context, error, stackTrace) => const Icon(
-                                    Icons.broken_image,
-                                    size: 120,
-                                    color: Colors.grey,
-                                  ),
-                                )
-                              : Icon(
-                                  Icons.egg,
-                                  size: 120,
-                                  color: Colors.white.withOpacity(0.3),
-                                ),
+                                  child: (_product?.foto_url != null &&
+                                          _product!.foto_url.isNotEmpty)
+                                      ? Image.network(
+                                          _product!.foto_url,
+                                          fit: BoxFit.cover,
+                                          width: double.infinity,
+                                          // Tambahkan loading builder agar lebih rapi
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  const Icon(
+                                            Icons.broken_image,
+                                            size: 120,
+                                            color: Colors.grey,
+                                          ),
+                                        )
+                                      : Icon(
+                                          Icons.egg,
+                                          size: 120,
+                                          color: Colors.white.withOpacity(0.3),
+                                        ),
                                 ),
                                 SafeArea(
                                   child: Padding(
@@ -191,7 +194,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                           ),
                                           child: IconButton(
                                             icon: const Icon(Icons.arrow_back),
-                                            onPressed: () => Navigator.pop(context),
+                                            onPressed: () =>
+                                                Navigator.pop(context),
                                           ),
                                         ),
                                       ],
@@ -223,7 +227,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 Text(
-                                  _product?.description ?? 'Tidak ada deskripsi',
+                                  _product?.description ??
+                                      'Tidak ada deskripsi',
                                   style: TextStyle(
                                     fontSize: 15,
                                     color: Colors.grey.shade600,
@@ -232,7 +237,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                 ),
                                 const SizedBox(height: 20),
                                 Container(
-                                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 12),
                                   decoration: BoxDecoration(
                                     color: Colors.orange.shade50,
                                     borderRadius: BorderRadius.circular(15),
@@ -247,7 +253,10 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                   ),
                                 ),
                                 const SizedBox(height: 30),
-                                const Text('Jumlah', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                const Text('Jumlah',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold)),
                                 const SizedBox(height: 12),
                                 Container(
                                   padding: const EdgeInsets.all(8),
@@ -260,32 +269,47 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                     children: [
                                       _buildQuantityButton(
                                         icon: Icons.remove,
-                                        onPressed: () { if (_quantity > 1) setState(() => _quantity--); },
+                                        onPressed: () {
+                                          if (_quantity > 1)
+                                            setState(() => _quantity--);
+                                        },
                                       ),
                                       Container(
                                         width: 60,
                                         alignment: Alignment.center,
-                                        child: Text('$_quantity', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                        child: Text('$_quantity',
+                                            style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold)),
                                       ),
                                       _buildQuantityButton(
                                         icon: Icons.add,
-                                        onPressed: () => setState(() => _quantity++),
+                                        onPressed: () =>
+                                            setState(() => _quantity++),
                                       ),
                                     ],
                                   ),
                                 ),
                                 const SizedBox(height: 30),
-                                const Text('Pilihan Rasa', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                                const Text('Pilihan Rasa',
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold)),
                                 const SizedBox(height: 12),
                                 Wrap(
                                   spacing: 10,
                                   runSpacing: 10,
                                   children: [
-                                    _buildToppingChip('Balado', _balado, (v) => setState(() => _balado = v)),
-                                    _buildToppingChip('Keju', _keju, (v) => setState(() => _keju = v)),
-                                    _buildToppingChip('Pedas', _pedas, (v) => setState(() => _pedas = v)),
-                                    _buildToppingChip('Asin', _asin, (v) => setState(() => _asin = v)),
-                                    _buildToppingChip('Barbeque', _barbeque, (v) => setState(() => _barbeque = v)),
+                                    _buildToppingChip('Balado', _balado,
+                                        (v) => setState(() => _balado = v)),
+                                    _buildToppingChip('Keju', _keju,
+                                        (v) => setState(() => _keju = v)),
+                                    _buildToppingChip('Pedas', _pedas,
+                                        (v) => setState(() => _pedas = v)),
+                                    _buildToppingChip('Asin', _asin,
+                                        (v) => setState(() => _asin = v)),
+                                    _buildToppingChip('Barbeque', _barbeque,
+                                        (v) => setState(() => _barbeque = v)),
                                   ],
                                 ),
                                 const SizedBox(height: 100),
@@ -296,12 +320,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       ),
                     ),
                     Positioned(
-                      bottom: 0, left: 0, right: 0,
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
                       child: Container(
                         padding: const EdgeInsets.all(20),
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, offset: const Offset(0, -5))],
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.1),
+                                blurRadius: 10,
+                                offset: const Offset(0, -5))
+                          ],
                         ),
                         child: SafeArea(
                           child: Row(
@@ -311,8 +342,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text('Total', style: TextStyle(fontSize: 14, color: Colors.grey.shade600)),
-                                    Text('Rp ${_calculateTotal()}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.orange)),
+                                    Text('Total',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            color: Colors.grey.shade600)),
+                                    Text('Rp ${_calculateTotal()}',
+                                        style: const TextStyle(
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.orange)),
                                   ],
                                 ),
                               ),
@@ -325,15 +363,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.orange,
                                       foregroundColor: Colors.white,
-                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(15)),
                                     ),
-                                    child: _ordering 
-                                      ? const SizedBox(
-                                          height: 24,
-                                          width: 24,
-                                          child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
-                                        )
-                                      : const Text('Pesan Sekarang', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                                    child: _ordering
+                                        ? const SizedBox(
+                                            height: 24,
+                                            width: 24,
+                                            child: CircularProgressIndicator(
+                                                color: Colors.white,
+                                                strokeWidth: 2),
+                                          )
+                                        : const Text('Pesan Sekarang',
+                                            style: TextStyle(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold)),
                                   ),
                                 ),
                               ),
@@ -347,14 +392,18 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  Widget _buildQuantityButton({required IconData icon, required VoidCallback onPressed}) {
+  Widget _buildQuantityButton(
+      {required IconData icon, required VoidCallback onPressed}) {
     return Container(
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
-      child: IconButton(icon: Icon(icon), onPressed: onPressed, color: Colors.orange),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      child: IconButton(
+          icon: Icon(icon), onPressed: onPressed, color: Colors.orange),
     );
   }
 
-  Widget _buildToppingChip(String label, bool selected, Function(bool) onSelected) {
+  Widget _buildToppingChip(
+      String label, bool selected, Function(bool) onSelected) {
     return FilterChip(
       label: Text(label),
       selected: selected,
