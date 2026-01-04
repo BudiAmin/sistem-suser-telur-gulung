@@ -4,7 +4,6 @@ import 'screens/main_navigation.dart';
 import 'screens/login_screen.dart';
 import 'screens/register_screen.dart';
 import 'screens/waiting_approval_screen.dart';
-import 'screens/product_list_screen.dart';
 import 'screens/product_detail_screen.dart';
 import 'screens/order_list_screen.dart';
 import 'screens/order_detail_screen.dart';
