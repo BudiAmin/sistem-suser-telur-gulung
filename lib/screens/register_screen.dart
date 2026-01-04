@@ -61,8 +61,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.purple.shade400,
-              Colors.blue.shade400,
+              Colors.blue.shade700,
+              Colors.blue.shade700,
+              Colors.blue.shade50,
             ],
           ),
         ),
@@ -99,13 +100,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Container(
                               padding: const EdgeInsets.all(16),
                               decoration: BoxDecoration(
-                                color: Colors.purple.shade50,
+                                color: Colors.blue.shade50,
                                 shape: BoxShape.circle,
                               ),
                               child: Icon(
                                 Icons.person_add_outlined,
                                 size: 64,
-                                color: Colors.purple.shade700,
+                                color: Colors.blue.shade700,
                               ),
                             ),
                             const SizedBox(height: 24),
@@ -234,7 +235,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: ElevatedButton(
                                 onPressed: _loading ? null : _register,
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.purple.shade700,
+                                  backgroundColor: Colors.blue.shade700,
                                   foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),

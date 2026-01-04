@@ -1,4 +1,4 @@
-name: uts_22
+name: user_telur_gulung
 description: "A new Flutter project."
 publish_to: "none"
 
@@ -16,15 +16,24 @@ dependencies:
   flutter_dotenv: ^6.0.0
   shared_preferences: ^2.2.0
   curved_navigation_bar: ^1.0.3
+  loading_animation_widget: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
 
   assets:
     - .env
+    - assets/images/icon.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+

@@ -55,7 +55,7 @@ class _OrderListScreenState extends State<OrderListScreen> {
     switch (status.toLowerCase()) {
       case 'menunggu antrian':
       case 'menunggu_antrian':
-        return Colors.orange;
+        return Colors.blue;
       case 'diproses':
         return Colors.blue;
       case 'selesai':
@@ -367,8 +367,8 @@ class _OrderListScreenState extends State<OrderListScreen> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
-                            Colors.orange.shade300,
-                            Colors.orange.shade50,
+                            Colors.blue.shade300,
+                            Colors.blue.shade50,
                           ],
                         ),
                         borderRadius: BorderRadius.circular(12),
@@ -449,7 +449,7 @@ Text(
                     Container(
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Colors.blue.shade700,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Icon(
@@ -472,15 +472,15 @@ Text(
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.orange.shade50,
+        color: Colors.blue.shade50,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.orange.shade200),
+        border: Border.all(color: Colors.blue.shade200),
       ),
       child: Text(
         label,
         style: TextStyle(
           fontSize: 11,
-          color: Colors.orange.shade700,
+          color: Colors.blue.shade700,
           fontWeight: FontWeight.w600,
         ),
       ),

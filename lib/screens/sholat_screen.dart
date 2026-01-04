@@ -65,7 +65,7 @@ class _SholatScreenState extends State<SholatScreen> {
                     controller: _searchController,
                     decoration: InputDecoration(
                       hintText: "Cari nama kota (contoh: Bandung)",
-                      prefixIcon: Icon(Icons.search, color: Colors.orange),
+                      prefixIcon: Icon(Icons.search, color: Colors.blue),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15)),
                     ),
@@ -80,7 +80,7 @@ class _SholatScreenState extends State<SholatScreen> {
                   ),
                   SizedBox(height: 10),
                   _isSearching
-                      ? LinearProgressIndicator(color: Colors.orange)
+                      ? LinearProgressIndicator(color: Colors.blue)
                       : Expanded(
                           child: ListView.builder(
                             itemCount: _searchResults.length,
@@ -116,7 +116,7 @@ class _SholatScreenState extends State<SholatScreen> {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Colors.orange.shade400, Colors.orange.shade50],
+          colors: [Colors.blue.shade400, Colors.blue.shade50],
         ),
       ),
       child: SafeArea(
@@ -135,7 +135,7 @@ class _SholatScreenState extends State<SholatScreen> {
                 ),
                 child: _loading
                     ? const Center(
-                        child: CircularProgressIndicator(color: Colors.orange))
+                        child: CircularProgressIndicator(color: Colors.blue))
                     : _buildJadwalList(),
               ),
             ),
@@ -177,7 +177,7 @@ class _SholatScreenState extends State<SholatScreen> {
               padding: EdgeInsets.all(8),
               decoration:
                   BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-              child: Icon(Icons.search, color: Colors.orange),
+              child: Icon(Icons.search, color: Colors.blue),
             ),
           )
         ],
@@ -237,7 +237,7 @@ class _SholatScreenState extends State<SholatScreen> {
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.orange.shade700)),
+                  color: Colors.blue.shade700)),
         ],
       ),
     );

@@ -25,8 +25,8 @@ class _MainNavigationState extends State<MainNavigation> {
       extendBody: true, // Agar navbar transparan di atas konten
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
-        color: Colors.orange,
-        buttonBackgroundColor: Colors.orange.shade700,
+        color: Colors.blue,
+        buttonBackgroundColor: Colors.blue.shade700,
         height: 60,
         items: const <Widget>[
           Icon(Icons.shopping_bag, size: 30, color: Colors.white),

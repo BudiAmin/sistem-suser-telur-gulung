@@ -67,7 +67,7 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
     switch (status.toLowerCase()) {
       case 'menunggu antrian':
       case 'pending':
-        return Colors.orange;
+        return Colors.blue;
       case 'diproses':
         return Colors.blue;
       case 'selesai':
@@ -286,10 +286,10 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              color: Colors.orange.shade100,
+              color: Colors.blue.shade100,
               borderRadius: BorderRadius.circular(15),
             ),
-            child: const Icon(Icons.egg, size: 40, color: Colors.orange),
+            child: const Icon(Icons.egg, size: 40, color: Colors.blue),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -351,7 +351,7 @@ Container(
         children: [
           const Row(
             children: [
-              Icon(Icons.restaurant_menu, color: Colors.orange),
+              Icon(Icons.restaurant_menu, color: Colors.blue),
               SizedBox(width: 8),
               Text('Pilihan Rasa', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             ],
@@ -363,11 +363,11 @@ Container(
             children: toppings.map((topping) => Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               decoration: BoxDecoration(
-                color: Colors.orange.shade50,
+                color: Colors.blue.shade50,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: Colors.orange.shade300),
+                border: Border.all(color: Colors.blue.shade300),
               ),
-              child: Text(topping, style: TextStyle(color: Colors.orange.shade700, fontWeight: FontWeight.bold)),
+              child: Text(topping, style: TextStyle(color: Colors.blue.shade700, fontWeight: FontWeight.bold)),
             )).toList(),
           ),
         ],

@@ -49,8 +49,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Colors.orange.shade400,
-              Colors.orange.shade50,
+              Colors.blue.shade400,
+              Colors.blue.shade50,
             ],
           ),
         ),
@@ -79,7 +79,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           ),
                           child: const Icon(
                             Icons.fastfood,
-                            color: Colors.orange,
+                            color: Colors.blue,
                             size: 32,
                           ),
                         ),
@@ -123,7 +123,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   child: _loading
                       ? const Center(
                           child: CircularProgressIndicator(
-                            color: Colors.orange,
+                            color: Colors.blue,
                           ),
                         )
                       : _error.isNotEmpty
@@ -159,7 +159,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                     icon: const Icon(Icons.refresh),
                                     label: const Text('Coba Lagi'),
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.orange,
+                                      backgroundColor: Colors.blue,
                                       foregroundColor: Colors.white,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(12),
@@ -175,7 +175,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                 )
                               : RefreshIndicator(
                                   onRefresh: _loadProducts,
-                                  color: Colors.orange,
+                                  color: Colors.blue,
                                   child: ListView.builder(
                                     padding: const EdgeInsets.all(20),
                                     itemCount: _products.length,
@@ -228,7 +228,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   width: 100,
                   height: 100,
                   decoration: BoxDecoration(
-                    color: Colors.orange.shade50,
+                    color: Colors.blue.shade50,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: ClipRRect(
@@ -240,13 +240,13 @@ class _ProductListScreenState extends State<ProductListScreen> {
                             errorBuilder: (context, error, stackTrace) => const Icon(
                               Icons.egg,
                               size: 50,
-                              color: Colors.orange,
+                              color: Colors.blue,
                             ),
                           )
                         : const Icon(
                             Icons.egg,
                             size: 50,
-                            color: Colors.orange,
+                            color: Colors.blue,
                           ),
                   ),
                 ),
@@ -282,7 +282,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.orange.shade50,
+                              color: Colors.blue.shade50,
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -290,7 +290,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.orange.shade700,
+                                color: Colors.blue.shade700,
                               ),
                             ),
                           ),
@@ -298,7 +298,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           Container(
                             padding: const EdgeInsets.all(8),
                             decoration: const BoxDecoration(
-                              color: Colors.orange,
+                              color: Colors.blue,
                               shape: BoxShape.circle,
                             ),
                             child: const Icon(

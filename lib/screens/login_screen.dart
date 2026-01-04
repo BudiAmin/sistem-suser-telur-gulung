@@ -65,8 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Colors.blue.shade400,
-              Colors.purple.shade400,
+              Colors.blue.shade700,
+              Colors.blue.shade50,
             ],
           ),
         ),
@@ -93,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            Icons.lock_outline,
+                            Icons.login_outlined,
                             size: 64,
                             color: Colors.blue.shade700,
                           ),

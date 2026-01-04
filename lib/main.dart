@@ -7,6 +7,7 @@ import 'screens/waiting_approval_screen.dart';
 import 'screens/product_detail_screen.dart';
 import 'screens/order_list_screen.dart';
 import 'screens/order_detail_screen.dart';
+import 'screens/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorSchemeSeed: Colors.blue,
       ),
-      initialRoute: '/login',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => SplashScreen(),
         '/login': (context) => LoginScreen(),
         '/register': (context) => RegisterScreen(),
         '/waiting-approval': (context) => WaitingApprovalScreen(),

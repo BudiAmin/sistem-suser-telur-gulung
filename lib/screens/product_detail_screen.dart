@@ -118,7 +118,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
           ? Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.orange.shade400, Colors.orange.shade50],
+                  colors: [Colors.blue.shade400, Colors.blue.shade50],
                 ),
               ),
               child: const Center(
@@ -153,8 +153,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
                                 colors: [
-                                  Colors.orange.shade400,
-                                  Colors.orange.shade600,
+                                  Colors.blue.shade400,
+                                  Colors.blue.shade600,
                                 ],
                               ),
                             ),
@@ -240,7 +240,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 12),
                                   decoration: BoxDecoration(
-                                    color: Colors.orange.shade50,
+                                    color: Colors.blue.shade50,
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   child: Text(
@@ -248,7 +248,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                     style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold,
-                                      color: Colors.orange.shade700,
+                                      color: Colors.blue.shade700,
                                     ),
                                   ),
                                 ),
@@ -350,7 +350,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                         style: const TextStyle(
                                             fontSize: 22,
                                             fontWeight: FontWeight.bold,
-                                            color: Colors.orange)),
+                                            color: Colors.blue)),
                                   ],
                                 ),
                               ),
@@ -361,7 +361,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                                   child: ElevatedButton(
                                     onPressed: _ordering ? null : _createOrder,
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colors.orange,
+                                      backgroundColor: Colors.blue,
                                       foregroundColor: Colors.white,
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
@@ -398,7 +398,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(10)),
       child: IconButton(
-          icon: Icon(icon), onPressed: onPressed, color: Colors.orange),
+          icon: Icon(icon), onPressed: onPressed, color: Colors.blue),
     );
   }
 
@@ -408,8 +408,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       label: Text(label),
       selected: selected,
       onSelected: onSelected,
-      selectedColor: Colors.orange.shade100,
-      checkmarkColor: Colors.orange,
+      selectedColor: Colors.blue.shade100,
+      checkmarkColor: Colors.blue,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     );
   }
