@@ -104,10 +104,10 @@ API_JADWAL_URL=your_api_jadwal_url
 | Foto | Nama | NIM |
 |------|------|-----|
 | <img src="assets/images/ikhsan.jpeg" width="80" style="border-radius:50%"> | Muhammad Ikhsan | 152022001 |
-| <img src="assets/images/yusron.jpeg" width="80" style="border-radius:50%"> | Muhammad Usri Yusron | 152022132 |
+| <img src="assets/images/usri.jpeg" width="80" style="border-radius:50%"> | Muhammad Usri Yusron | 152022132 |
 | <img src="assets/images/yazid.jpeg" width="80" style="border-radius:50%"> | Muhammad Yazid | 152022192 |
 | <img src="assets/images/budi.jpeg" width="80" style="border-radius:50%"> | Budi Amin | 152022213 |
-| <img src="assets/images/faoyan.jpeg" width="80" style="border-radius:50%"> | Ahmad Faoyan | 152024601 |
+| <img src="assets/images/fauzan.jpeg" width="80" style="border-radius:50%"> | Ahmad Faoyan | 152024601 |
 
 ---
 
