@@ -5,8 +5,10 @@ class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
   Future<void> _openYoutube() async {
-    final Uri youtubeApp = Uri.parse('youtube://www.youtube.com/watch?v=lxYnbbomB_8');
-    final Uri youtubeWeb = Uri.parse('https://youtu.be/lxYnbbomB_8?si=MekUUZ0A55x601MS');
+    final Uri youtubeApp =
+        Uri.parse('youtube://www.youtube.com/watch?v=xhXOB7wXpp4');
+    final Uri youtubeWeb =
+        Uri.parse('https://www.youtube.com/watch?v=xhXOB7wXpp4');
 
     if (await canLaunchUrl(youtubeApp)) {
       await launchUrl(youtubeApp);
