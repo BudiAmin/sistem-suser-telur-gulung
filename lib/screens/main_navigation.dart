@@ -4,6 +4,7 @@ import 'product_list_screen.dart';
 import 'order_list_screen.dart';
 import 'sholat_screen.dart';
 import 'location_screen.dart';
+import 'about_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -20,6 +21,7 @@ class _MainNavigationState extends State<MainNavigation> {
     OrderListScreen(),
     SholatScreen(),
     LocationScreen(),
+    const AboutScreen(),
   ];
 
   @override
@@ -37,16 +39,12 @@ class _MainNavigationState extends State<MainNavigation> {
           Icon(Icons.receipt_long, size: 30, color: Colors.white),
           Icon(Icons.access_time_filled, size: 30, color: Colors.white),
           Icon(Icons.location_on, size: 30, color: Colors.white),
-          Icon(Icons.logout, size: 30, color: Colors.white),
+          Icon(Icons.info, size: 30, color: Colors.white),
         ],
         onTap: (index) {
-          if (index == 4) {
-            Navigator.pushReplacementNamed(context, '/login');
-          } else {
-            setState(() {
-              _page = index;
-            });
-          }
+          setState(() {
+            _page = index;
+          });
         },
       ),
       body: _screens[_page],

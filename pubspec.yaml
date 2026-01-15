@@ -34,6 +34,11 @@ flutter:
   assets:
     - .env
     - assets/images/icon.png
+    - assets/images/budi.jpeg
+    - assets/images/yazid.jpeg
+    - assets/images/usri.jpeg
+    - assets/images/ikhsan.jpeg
+    - assets/images/fauzan.jpeg
 
 flutter_icons:
   android: true

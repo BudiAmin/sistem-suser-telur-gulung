@@ -8,6 +8,7 @@ import 'screens/product_detail_screen.dart';
 import 'screens/order_list_screen.dart';
 import 'screens/order_detail_screen.dart';
 import 'screens/splash_screen.dart';
+import 'screens/about_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/waiting-approval': (context) => WaitingApprovalScreen(),
         '/products': (context) => MainNavigation(),
         '/orders': (context) => OrderListScreen(),
+        '/about': (context) => const AboutScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == '/product-detail') {
